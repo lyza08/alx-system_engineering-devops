@@ -1,0 +1,43 @@
+# Copyright (c) 2014, 2016, Oracle and/or its affiliates. All rights reserved.
+#
+# This software is open-source and distributed under the GNU General Public License, version 2.0,
+# granted by the Free Software Foundation.
+#
+# Included components like OpenSSL might have separate licenses, and MySQL grants additional permissions
+# to link this program with separately licensed software.
+#
+# This software is provided without warranties of any kind, expressed or implied,
+# including but not limited to the implied warranties of merchantability or fitness for a particular purpose.
+# Refer to the GNU General Public License, version 2.0, for more information.
+#
+# If you didn't receive a copy of the GNU General Public License, contact the Free Software Foundation, Inc.
+
+#
+# Configuration file for MySQL Server.
+#
+# Visit the link below for detailed explanations:
+# http://dev.mysql.com/doc/mysql/en/server-system-variables.html
+
+[mysqld]
+pid-file    = /var/run/mysqld/mysqld.pid
+socket      = /var/run/mysqld/mysqld.sock
+datadir     = /var/lib/mysql
+log-error   = /var/log/mysql/error.log
+
+
+# By default, connections are limited to localhost.
+#--disabled to enable MySQL replication
+#bind-address    = 127.0.0.1
+
+# It's advisable to disable symbolic links to prevent various security risks
+symbolic-links=0
+
+# Assigning a server ID
+server-id  =  1
+
+# Defining the name and location of the MySQL binary log file
+log_bin  = /var/log/mysql/mysql-bin.log
+
+# Specifying the database name for replication
+binlog_do_db    = tyrell_corp
+
